@@ -6,7 +6,13 @@ import { ActionButton, Reveal, SectionHeading } from "./primitives";
 
 export function Register() {
   const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", phone: "", program: PROGRAMS[0].title, note: "" });
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    program: PROGRAMS[0]?.title ?? "",
+    note: "",
+  });
+
 
   const waHref = `${WHATSAPP_URL}?text=${encodeURIComponent(
     `مرحبًا Codra Tech، اسمي ${form.name || "..."} وأرغب بالتسجيل في ${form.program}.`,
