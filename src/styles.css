@@ -108,7 +108,31 @@
   }
 }
 
+@utility input-base {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+  background: color-mix(in oklab, var(--background) 60%, transparent);
+  padding: 0.85rem 1rem;
+  font-size: 0.875rem;
+  color: var(--color-foreground);
+  outline: none;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.input-base::placeholder {
+  color: color-mix(in oklab, var(--muted-foreground) 80%, transparent);
+}
+
+.input-base:focus {
+  border-color: color-mix(in oklab, var(--primary) 55%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 18%, transparent);
+}
+
 @utility glass {
+
   background: color-mix(in oklab, var(--surface) 70%, transparent);
   backdrop-filter: blur(14px);
   border: 1px solid var(--color-border);
