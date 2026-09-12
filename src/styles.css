@@ -41,6 +41,45 @@
 
 :root {
   --radius: 1rem;
+  --background: oklch(0.985 0.006 160);
+  --foreground: oklch(0.22 0.02 165);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.02 165);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.02 165);
+  --primary: oklch(0.6 0.15 158);
+  --primary-foreground: oklch(0.99 0.005 160);
+  --primary-glow: oklch(0.72 0.15 168);
+  --secondary: oklch(0.95 0.012 165);
+  --secondary-foreground: oklch(0.25 0.02 165);
+  --muted: oklch(0.95 0.012 165);
+  --muted-foreground: oklch(0.48 0.02 165);
+  --accent: oklch(0.93 0.03 165);
+  --accent-foreground: oklch(0.25 0.02 165);
+  --destructive: oklch(0.58 0.2 25);
+  --destructive-foreground: oklch(0.99 0.005 160);
+  --border: oklch(0.22 0.02 165 / 12%);
+  --input: oklch(0.22 0.02 165 / 16%);
+  --ring: oklch(0.6 0.15 158);
+  --surface: oklch(1 0 0);
+  --surface-2: oklch(0.965 0.008 165);
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-glow));
+  --gradient-mesh: radial-gradient(
+      60% 60% at 80% 10%,
+      color-mix(in oklab, var(--primary) 16%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      50% 50% at 10% 20%,
+      color-mix(in oklab, var(--primary-glow) 12%, transparent),
+      transparent 70%
+    );
+  --shadow-glow: 0 0 0 1px color-mix(in oklab, var(--primary) 24%, transparent),
+    0 18px 50px -20px color-mix(in oklab, var(--primary) 40%, transparent);
+  --shadow-card: 0 20px 50px -28px oklch(0.22 0.02 165 / 28%);
+}
+
+.dark {
   --background: oklch(0.16 0.015 165);
   --foreground: oklch(0.97 0.008 160);
   --card: oklch(0.21 0.018 165);
@@ -63,7 +102,6 @@
   --ring: oklch(0.78 0.18 158);
   --surface: oklch(0.19 0.016 165);
   --surface-2: oklch(0.24 0.02 165);
-  --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-glow));
   --gradient-mesh: radial-gradient(
       60% 60% at 80% 10%,
       color-mix(in oklab, var(--primary) 22%, transparent),
@@ -78,6 +116,7 @@
     0 18px 60px -18px color-mix(in oklab, var(--primary) 45%, transparent);
   --shadow-card: 0 24px 70px -30px oklch(0 0 0 / 70%);
 }
+
 
 @layer base {
   * {
