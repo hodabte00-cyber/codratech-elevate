@@ -5,6 +5,8 @@ import { NAV_LINKS, WHATSAPP_URL } from "./data";
 import { ActionButton } from "./primitives";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
+import { ThemeToggle } from "./ThemeToggle";
+
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -81,7 +83,9 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
+          <ThemeToggle />
           <ActionButton href={WHATSAPP_URL} variant="ghost" className="px-5 py-2.5 text-sm">
+
             <MessageCircle className="h-4 w-4" />
             واتساب
           </ActionButton>
@@ -90,13 +94,17 @@ export function Navbar() {
           </ActionButton>
         </div>
 
-        <button
-          onClick={() => setOpen((v) => !v)}
-          aria-label="فتح القائمة"
-          className="grid h-10 w-10 place-items-center rounded-full glass lg:hidden"
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button
+            onClick={() => setOpen((v) => !v)}
+            aria-label="فتح القائمة"
+            className="grid h-10 w-10 place-items-center rounded-full glass"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
+
       </div>
 
       <AnimatePresence>
